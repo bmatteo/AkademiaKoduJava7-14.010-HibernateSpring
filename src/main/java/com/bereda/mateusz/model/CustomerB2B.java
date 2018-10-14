@@ -1,6 +1,14 @@
 package com.bereda.mateusz.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class CustomerB2B {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String companyName;
     private String nip;
@@ -45,5 +53,16 @@ public class CustomerB2B {
 
     public void setFax(String fax) {
         this.fax = fax;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerB2B{" +
+                "id=" + id +
+                ", companyName='" + companyName + '\'' +
+                ", nip='" + nip + '\'' +
+                ", regon='" + regon + '\'' +
+                ", fax='" + fax + '\'' +
+                '}';
     }
 }
